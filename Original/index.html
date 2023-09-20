@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="/js/libs/jquery-1.11.3.min.js"></script>
+        <script src="/js/libs/custom-fancybox-combined.js" defer=""></script>
+        <!-- <link href="/home/font-awesome-4.2.0/css/font-awesome.min.css" rel="stylesheet"> -->
+    </head>
+    
+    <body class="page" data-new-gr-c-s-check-loaded="14.1038.0" data-gr-ext-installed="">
+        <div class="wrapper">
+
+        <link href="http://fonts.googleapis.com/css?family=Autour+One" rel="stylesheet" type="text/css">
+        <!-- <link href="/fonts/Gabriela-Regular.ttf" rel="stylesheet" type="text/css"> -->
+        <link type="text/css" href="/css/ui-lightness/jquery-ui.custom.css" rel="Stylesheet">
+        <link rel="stylesheet" type="text/css" href="/css/chein.css">
+        
+        <!-- Insert this line above script imports  -->
+
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.8.23/jquery-ui.min.js"> </script>
+        <script type="text/javascript"> (window.jQuery.ui || document.write('<script src="/js/libs/jquery-ui.min.js"><\/script>'))</script>
+
+        
+
+        <script src="/js/libs/underscore.min.js"></script>
+        <script src="/js/libs/backbone.min.js"></script>
+        <script src="/js/cogn/chein.min.js?v=.29"></script>
+        <script src="/js/cogn/gamesave.js"></script>
+
+        <script type="text/javascript" lang="javascript">
+            USER_ID = "22610";
+            
+
+            $(document).ready(function() {
+                $(".fancybox").fancybox({
+                    autoDimensions: false,
+                    width:777,
+                    height:690,
+                });
+                /*if (isMobile ) {
+                    $('#canvas').attr('width','400').attr('height','300'); 
+                } else {
+                    $('#canvas').attr('width','500').attr('height','400'); 
+                }*/
+                    $('#canvas').attr('width','500').attr('height','400'); 
+
+                canImg = new Image();
+                canImg.src = 'images/scrbrd.png';
+
+                $('#btn,#word,#nonword').button();
+                $("#nonword").button().addClass('ui-state-error');
+
+                $('#btn').click(function() {
+                    ig.game.gamestart();
+                    $('#playbutton').css('visibility','hidden');
+                    $('#showlink').css('visibility','hidden');
+                });
+
+                $('#word').click(function() {
+                    ig.game.clicked('>');
+                });
+                $('#nonword').click(function() {
+                    ig.game.clicked('<');
+                });
+                $('#continue').click(function () {
+                    ig.game.roundUp();
+                    $('#scr').css('visibility','hidden');
+                    $('#inputs').css('visibility','visible');
+                });
+                $('#exit').click(function () {
+                    ig.game.gameUp();
+                });
+            });
+
+            function changetextword () {
+                $("#word").prop('value', 'Word');
+                $("#nonword").prop('value', 'Non Word');
+            }
+
+            function changetextshape() {
+                $("#word").prop('value', 'Symmetric');
+                $("#nonword").prop('value', 'Non Symmetric');
+            }
+        </script>
+
+        <div class="content" id="content">
+            <div id="scr">Your Score</div>
+                <a class="fancybox instruct" href="#inline" title="Instructions" style="color:black; margin-left:1%;"><i class="icon-info-sign" style="font-size:20px"></i>Instructions</a>
+                <div id="playbutton" class="playbutton" style="visibility: visible;">
+                    <input id="btn" type="button" value="Start" class="button ui-button ui-widget ui-state-default ui-corner-all" role="button" aria-disabled="false">
+                </div>
+                <div id="showlink" class="showlink"></div>
+                <div id="tries" class="tries"> </div>
+                <canvas id="canvas" class="top_divs" width="500" height="400" style="image-rendering: -webkit-optimize-contrast;">
+                    Canvas not supported
+                </canvas>
+                <div id="inputs">
+                    <input id="nonword" type="button" value="Non word" class="nonword ui-button ui-widget ui-state-default ui-corner-all ui-state-error" role="button" aria-disabled="false">
+                    <input id="word" type="button" value="Word" class="word ui-button ui-widget ui-state-default ui-corner-all" role="button" aria-disabled="false">
+                </div>
+                <input id="continue" type="button" value="Continue" class="exit">
+                <input id="exit" type="button" value="Exit" class="exit">
+            </div>
+        </div>
+
+            
+
+</body>
+</html>

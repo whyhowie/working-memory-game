@@ -1,0 +1,157 @@
+@font-face{
+    font-family:Lato;
+    src:url('/fonts/Gabriela-Regular.ttf')
+}
+body{
+    overflow:hidden
+}
+footer{
+    position:fixed;
+    bottom:0;
+    width:100%
+}
+#content{
+    position:relative;
+    width:70%;
+    top:80px!important;
+    margin:0 auto;
+    line-height:31px!important;
+    background:#e4e1d7;
+    padding:2em 50px 2em!important;
+    height:450px
+}
+#canvas{
+    position:relative;
+    top:-100px;
+    margin:0 auto;
+    display:block;
+    border-radius:5px
+}
+#playbutton{
+    position:relative;
+    visibility:hidden;
+    margin:0 auto;
+    width:177px;
+    top:150px
+}
+#btn{
+    position:relative;
+    width:177px;
+    height:49px;
+    background:#3759cf;
+    border-radius:15px;
+    z-index:99;
+    font-family:'Autour One',cursive;
+    font-size:24px;
+    color:#fff
+}
+#btn:hover{
+    background:#1b3699
+}
+#inputs{
+    position:relative;
+    width:368px;
+    top:-100px;
+    margin:0 auto;
+    visibility:hidden
+}
+#word{
+    font-family:'Autour One',cursive;
+    position:relative;
+    background:#5bb537;
+    width:180px;
+    height:47px;
+    border:1px solid #398c19
+}
+#nonword{
+    font-family:'Autour One',cursive;
+    background:#cd3f3f;
+    width:180px;
+    height:47px
+}
+#continue{
+    font-family:'Autour One',cursive;
+    height:39px;
+    width:155px;
+    cursor:pointer;
+    background:#1c50bf;
+    visibility:hidden;
+    position:relative;
+    top:-230px;
+    left:255px;
+    margin-top:-8%;
+    border:1px solid #1b3699;
+    border-radius:5px
+}
+#exit{
+    font-family:'Autour One',cursive;
+    position:relative;
+    top:-267px;
+    left:45%;
+    width:80px;
+    height:38px;
+    visibility:hidden;
+    background:#cd3f3f;
+    cursor:pointer;
+    border:1px solid #cd0a0a;
+    border-radius:5px
+}
+.word,.nonword,#exit,.instruct,#continue{
+    color:#FFF
+}
+#scr{
+    font-family:'Autour One',Lato;
+    position:relative;
+    width:180px;
+    top:-20px;
+    font-size:24px;
+    color:#555221;
+    margin:0 auto;
+    visibility:hidden
+}
+.instruct{
+    position:relative;
+    top:-48px;
+    left:-50px;
+    font-family:'Autour One',Lato
+}
+footer{
+    margin-top:-4%
+}
+@media only screen and (max-width:1200px){
+    body{
+        overflow:visible
+    }
+    footer{
+        position:relative;
+        top:38px
+    }
+    #content{
+        top:5%!important;
+        width:85%;
+        padding:1px;
+        height:440px
+    }
+    #playbutton{
+        top:100px
+    }
+    #word{
+        float:right;
+        width:140px;
+        left:2%;
+        font-size:12px
+    }
+    #nonword{
+        width:140px;
+        font-size:12px
+    }
+    #exit{
+        left:40%;
+        top:-248px
+    }
+    #continue{
+        width:130px;
+        top:-220px;
+        left:170px
+    }
+}
