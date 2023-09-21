@@ -25,6 +25,9 @@ canvas {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    border: solid 2px black;
+    /* border: solid 2px black; */
 }
 
+.button-pair {
+    width: 40%;
+}

@@ -8,20 +8,22 @@ function createButtonDiv() {
     
 }
 function createAButton() {
-    startButton = createButton('A');    
-    startButton.mousePressed(changeBG);
-    startButton.parent(buttonDiv);
-    startButton.size(100, 75);
-    startButton.style('font-size', '20px');
-}
-function createBButton() {
-    startButton = createButton('B');    
-    startButton.mousePressed(changeBG);
-    startButton.parent(buttonDiv);
-    startButton.size(100, 75);
-    startButton.style('font-size', '20px');
+    aButton = createButton('A');
+    resizeButton(aButton);
 }
 
+function createBButton() {
+    bButton = createButton('B');  
+    resizeButton(bButton);
+}
+
+function resizeButton(button) {
+    button.addClass('button-pair');   
+    button.mousePressed(changeBG);
+    button.parent(buttonDiv);
+    button.size(buttonDiv.size().width * 0.4, 75);
+    button.style('font-size', '20px');
+}
 
 
 //////////////////////////////////////////////////////////////
@@ -57,8 +59,8 @@ function randomRGBA() {
 }
 
 
-
-
+//////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////
 // Responsive
 function windowResized() {
     canvas1 = resizeCanvas(windowWidth * 0.95, windowHeight * 0.95);
@@ -67,4 +69,6 @@ function windowResized() {
     buttonDiv.position(width*0.5, height - 100);
     buttonDiv.center('horizontal');
     
+    resizeButton(aButton);
+    resizeButton(bButton);
 }
